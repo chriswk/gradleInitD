@@ -1,0 +1,10 @@
+projectsEvaluated {
+    rootProject.allprojects {
+        if (!tasks.findByName('showRepos')) {
+            task showRepos(description : 'Print all repositories') << { task ->
+                println "All repos:"
+				println repositories*.name
+            }   
+        }   
+    }
+}
